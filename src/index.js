@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { setGlobal } from 'reactn';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+// global values go here
+setGlobal({
+  test: 'test',
+})
+//this.global.test
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

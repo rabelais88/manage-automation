@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.11.2",
+    "prop-types": "^15.6.2",
+    "ra-data-json-server": "^2.5.1",
     "react": "^16.6.3",
+    "react-admin": "^2.5.1",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "reactn": "^0.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
