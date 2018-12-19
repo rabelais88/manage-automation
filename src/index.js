@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createApi } from './Api';
 
 // global values go here
 setGlobal({
   test: 'test',
+  games: [],
+  ready: false,
 })
-//this.global.test
+
+createApi();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

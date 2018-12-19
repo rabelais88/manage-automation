@@ -18,16 +18,16 @@ export default class IntegerStep extends React.Component {
       <Row>
         <Col span={12}>
           <Slider
-            min={1}
-            max={64}
+            min={this.props.min}
+            max={this.props.max}
             onChange={this.onChange}
             value={typeof this.props.value === 'number' ? this.props.value : 0}
           />
         </Col>
         <Col span={4}>
           <InputNumber
-            min={1}
-            max={64}
+            min={this.props.min}
+            max={this.props.max}
             style={{ marginLeft: 16 }}
             value={this.props.value}
             onChange={this.onChange}

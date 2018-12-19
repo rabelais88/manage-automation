@@ -1,4 +1,4 @@
-import React from 'reactn';
+import React, { setGlobal } from 'reactn';
 import 'antd/dist/antd.css';
 import './App.css';
 import {
@@ -6,6 +6,7 @@ import {
   Card,
 } from 'antd';
 import TeamCreation from './Views/TeamCreation';
+import { getGames, getCountries } from './Api';
 
 class App extends React.Component {
   render() {
@@ -14,9 +15,22 @@ class App extends React.Component {
           <Card title="antd version">
             {version}
           </Card>
-          <TeamCreation />
+          { this.global.ready ? <TeamCreation global={this.global}/> : null}
         </div>
     );
+  }
+  componentWillMount() {
+    Promise.all([
+      getGames(this.global.api),
+      getCountries(this.global.api)
+    ]).then(data => {
+      const [games, countries] = data;
+      setGlobal({
+        ready: true,
+        games,
+        countries,
+      })
+    })
   }
 }
 
