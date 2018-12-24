@@ -9,6 +9,7 @@ import {
 } from 'antd';
 
 import IntegerStep from '../Components/IntegerStep';
+import { authUser } from '../Api';
 
 class TeamCreation extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class TeamCreation extends React.Component {
   }
   submit() {
     alert(JSON.stringify(this.state));
+    authUser(this.global.socket, this.state);
   }
   render() {
     const { setv } = this;

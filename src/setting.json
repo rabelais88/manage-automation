@@ -1,3 +1,4 @@
 {
-  "API_URL_ORIGIN": "http://dev.api.lvup.gg/v1"
+  "API_URL_ORIGIN": "http://dev.api.lvup.gg/v1",
+  "PORT_PUPPET": 3030
 }

@@ -12,9 +12,12 @@
     "react-admin": "^2.5.1",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
-    "reactn": "^0.1.8"
+    "reactn": "^0.1.8",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
   },
   "scripts": {
+    "ready": "nodemon puppet.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
