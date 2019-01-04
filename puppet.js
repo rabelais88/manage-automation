@@ -10,13 +10,20 @@ io.on('connection', (socket) => {
   console.log('a client connected');
   socket.on('createTeam', (teamData) => {
     console.log('team creation requested');
-    createTeam();
+
+    puppeteer.launch({ headless: false }).then((browser) => {
+      try {
+        createTeam(browser, teamData);
+      } finally {
+        browser.close();
+      }
+    })
+
   })
 })
 
-async function createTeam(teamData) {
+async function createTeam(browser, teamData) {
   console.log('creating team');
-  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.setViewport({ width: 1020, height: 700 });
   if (!cookie) {
