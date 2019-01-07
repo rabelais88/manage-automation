@@ -9,7 +9,8 @@ import {
 } from 'antd';
 
 import IntegerStep from '../Components/IntegerStep';
-import { authUser } from '../Api';
+// import { authUser } from '../Api';
+import createTeams from '../Logic/createTeams';
 
 class TeamCreation extends React.Component {
   constructor(props) {
@@ -33,7 +34,8 @@ class TeamCreation extends React.Component {
   }
   submit() {
     alert(JSON.stringify(this.state));
-    authUser(this.global.socket, this.state);
+    // authUser(this.global.socket);
+    createTeams(this.global.api, this.global.socket, this.state, this.global);
   }
   render() {
     const { setv } = this;
@@ -48,8 +50,8 @@ class TeamCreation extends React.Component {
           <Form.Item label="팀 갯수">
             <IntegerStep value={this.state.teamAmount} onChange={d => setv('teamAmount', d)} min={1} max={64} />
           </Form.Item>
-          <Form.Item label="팀 공통 이름(팀장:XXX0 멤버:XXX2, XXX3... 팀명:XXX)">
-            <Input placeholder="기본 팀 이름 입력" onChange={e => setv('teamName', e)}/>
+          <Form.Item label="팀 공통 닉네임(팀장:XXX0 멤버:XXX2, XXX3... 팀명:XXX - 아이디: XXX0@XXX.com)">
+            <Input placeholder="기본 팀 닉네임 입력" onChange={e => setv('teamName', e)}/>
           </Form.Item>
           <Form.Item label="팀 공통 비밀번호">
             <Input placeholder="비밀번호 입력" type="password" onChange={e => setv('teamPassword', e) }/>

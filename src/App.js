@@ -15,7 +15,7 @@ class App extends React.Component {
           <Card title="antd version">
             {version}
           </Card>
-          { this.global.ready ? <TeamCreation global={this.global}/> : null}
+          { this.global.ready && this.global.loggedIn ? <TeamCreation global={this.global}/> : <p>로그인이 필요합니다. 로그인 해주세요</p>}
         </div>
     );
   }

@@ -1,0 +1,1 @@
+rm ready.command;MYLOC=$(pwd);echo "cd $MYLOC;yarn ready;" > ready.command; chmod +x ready.command; open ready.command; yarn start;unset MYLOC;
